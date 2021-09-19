@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+main{
+  min-height: 100vh;
+}
+header a{
+  color: #fff;
+  text-decoration: none;
+}
+.form-div{
+  display: flex;
+  justify-content:center;
+}
+.form{
+  margin: 5rem 1rem;
+  max-width: 350px !important;
+  box-shadow: 2px 2px 8px gray;
+  padding: 2rem;
+  border-radius: .5rem;
+}
+.form h2{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.btn{
+  width: 100%;
+}
+.form p a{
+  color: #333;
+  margin-top: .7rem;
+  text-decoration: none;
+}
+.form p a:hover{
+  color: blue;
+}
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212529;
+  color: #fff;
+  height: 3rem;
+}

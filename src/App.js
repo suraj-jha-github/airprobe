@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
-function App() {
+const App = () => {
+  const [dataHeader, setDataHeader] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BrowserRouter>
+      <header>
+        <Header dataHeader={dataHeader} setDataHeader={setDataHeader} />
       </header>
-    </div>
+      <main>
+        <Switch>
+          <Route exact path="/"><Home/></Route>
+          <Route exact path="/login">
+            <Login setDataHeader={setDataHeader} />
+          </Route>
+          <Route exact path="/signup">
+            <Register setDataHeader={setDataHeader} />
+          </Route>
+        </Switch>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
